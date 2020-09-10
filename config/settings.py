@@ -13,7 +13,7 @@ environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env.str('SECRET_KEY') 
 DEBUG = env.bool('DEBUG') 
 
-ALLOWED_HOSTS = ['https://rbk-demo-app.herokuapp.com']
+ALLOWED_HOSTS = ['rbk-demo-app.herokuapp.com', '127.0.0.1']
 
 
 
