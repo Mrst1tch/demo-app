@@ -32,4 +32,4 @@ def getphoto():
     context = {
         'response': response_param
     }
-    return render(request, 'detail.html', context)
+    return render(request, 'index.html', context)

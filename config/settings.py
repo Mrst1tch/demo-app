@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'crispy_forms',
     'app.unsplash.apps.UnsplashConfig'
 ]
 
@@ -83,7 +83,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LANGUAGE_CODE = 'en-us'
 
