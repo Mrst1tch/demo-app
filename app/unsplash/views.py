@@ -10,7 +10,7 @@ def getphoto():
     url = f'{BASE_URL}/photos'
     params = {
         'count':'10',
-        'client_id':settings.UNSPLASH_ACCESS_KEY
+        'client_id':settings.ACCESS_KEY
     }
     request_param = requests.get(url, params=params)
     request_param = request_param.json()
@@ -20,7 +20,7 @@ def getphoto():
     def detail_photo_url(id_photo):
         url = f'{BASE_URL}/photos/{id_photo}'
     params = {
-        'client_id':settings.UNSPLASH_ACCESS_KEY
+        'client_id':settings.ACCESS_KEY
     }
     response_param = requests.get(url, params=params)
     response_param = response_param.json()
