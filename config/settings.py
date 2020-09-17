@@ -15,7 +15,7 @@ DEBUG = env.bool('DEBUG')
 
 ALLOWED_HOSTS = ['rbk-demo-app.herokuapp.com', '127.0.0.1', '0.0.0.0']
 
-UNSPLASH_ACCESS_KEY = env.str('UNSPLASH_ACCESS_KEY')
+UNSPLASH_ACCESS_KEY = env.str('ACCESS_KEY')
 
 
 
