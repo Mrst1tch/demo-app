@@ -7,7 +7,7 @@ from django.conf import settings
 BASE_URL = 'https://api.unsplash.com/'
 
 def getphoto():
-    url = f'{BASE_URL}/photos'
+    url = f'{BASE_URL}/photos/random'
     params = {
         'count':'10',
         'client_id':settings.ACCESS_KEY
@@ -17,8 +17,8 @@ def getphoto():
 
     return request_param
 
-    def detail_photo_url(id_photo):
-        url = f'{BASE_URL}/photos/{id_photo}'
+def detail_photo_url(id_photo):
+    url = f'{BASE_URL}/photos/{id_photo}'
     params = {
         'client_id':settings.ACCESS_KEY
     }
@@ -27,9 +27,4 @@ def getphoto():
     return response_param
 
 
-    def detail_view(request, id):
-        response_param = detail_photo_url(id)
-    context = {
-        'response': response_param
-    }
-    return render(request, 'index.html', context)
+    
