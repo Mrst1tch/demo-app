@@ -1,0 +1,29 @@
+
+{% block content %}
+
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <form action={% url 'search' %} method='GET'> 
+      {{ search_form.as_p }}
+      <input type="submit" value="Submit" class="btn btn-outline-success my-2 my-sm-0">
+    </form> 
+  </div>
+</nav> <br>
+
+    <div class="container">
+      <div class="row text-center text-lg-left">
+
+      {% for response_item in response.results %}
+      
+        <div class="col-lg-3 col-md-4 col-6">
+            <img class="img-fluid img-thumbnail" src="{{ response_item.urls.small }}" alt="">
+        </div>     
+        <hr class="mt-2 mb-5">  
+
+      {% endfor %}
+      
+      </div>
+    </div>
+
+{% endblock content %}
