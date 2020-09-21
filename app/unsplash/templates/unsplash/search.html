@@ -5,6 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Search</title>
 </head>
 <body>
@@ -30,10 +33,11 @@
             {% for response_item in response.results %}
         
             <div class="col-lg-3 col-md-4 col-6">
-                Author : {{ response_item.user.name }}
-                <a href="{% url 'detail' response_item.id %}" class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="{{ response_item.urls.small }}" alt="">
-                </a>
+                {{ response_item.user.name }}
+                    <a href="{% url 'detail' response_item.id %}">
+                        <img src="{{ photo.urls.full }} " alt="{{photo.id}}"  width = "280" height="280"> 
+                    </a>
+                </div> 
             </div>     
             <hr class="mt-2 mb-5">  
   

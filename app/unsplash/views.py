@@ -4,7 +4,8 @@ from django.shortcuts import render
 from django.http.response import HttpResponse
 from django import forms
 
-
+class SearchPhoto(forms.Form):
+    query = forms.CharField(max_length=80, required=False)
 
 # Create your views here.
 
@@ -110,6 +111,5 @@ def detail_view(request, id):
 
 
 
-class SearchPhoto(forms.Form):
-    query = forms.CharField(max_length=80, required=False)
+
     
