@@ -1,20 +1,51 @@
 {% block content %}
-    <h1>Photo Detail</h1>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">{{ response.user.name }}</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                </li>
+            </ul>
+        </div>
+    </nav>
         
     <hr class="mt-2 mb-5"> 
 
     <div class="container">
-      
+
         <div class="row text-center text-lg-left">
       
           <div class="#">
             <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="{{ response.urls.full }}" alt="">
+              <img class="img-fluid img-thumbnail" src="{{ response.urls.full }}" alt="" width="400" height="400">
             </a>
           </div>
+
+        <h5 class="text-left text-lg-left mt-4 mb-0">
+          Date created : {{ response.created_at }}</h5>
+        <h5 class="text-left text-lg-left mt-4 mb-0">
+          Likes : {{ response.likes }}</h5>
+        <br>
+        
+
+          {% if messages %}
+            <button type="button" class="btn btn-secondary btn-lg">Saved</button>         
+          {% else %}
+            <form method='POST'> 
+              {% csrf_token %}
+              <input type="submit" value="Save" class="btn btn-primary btn-lg disabled">
+            </form> 
+          {% endif %}
 
         </div>
         <hr class="mt-2 mb-5">  
     </div>
+
+
+
+    
+
 
 {% endblock content %}
